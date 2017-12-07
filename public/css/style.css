@@ -97,7 +97,7 @@ p.sub-heading{
 }
 .hover-red:hover{
   color:#fff;
-  background-color:red;
+  background-color:purple;
   background-position:0 34px;
 }
 .hover-blue:hover{
