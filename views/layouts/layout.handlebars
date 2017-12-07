@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zenith Society - Events Administration</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  <script>
+  $( function() {
+    $( "#date" ).datepicker({ dateFormat: 'd MM yy' });
+  } );
+  </script>
+  
+</head>
+
+{{#if error_msg}}
+  <div class="alert alert-danger">{{error_msg}}</div>
+{{/if}}
+{{#if error}}
+  <div class="alert alert-danger">{{error}}</div>
+{{/if}}
+
+<body>
+<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/search/list">Search/Edit</a></li>
+            <li role="presentation"><a href="/">Add New</a></li>    
+          </ul>
+        </nav>
+        <h3 class="text-muted">Zennith Society Events Administration</h3>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-12">
+             {{{body}}}
+          </div>
+      </div>
+{{#if success_msg}}
+  <div id="event-added-msg" class="alert alert-success">{{success_msg}}</div>
+{{/if}}
+      <footer class="footer">
+        <p>&copy; 2017 Zenith Society.</p>
+      </footer>
+
+    </div> <!-- /container -->    
+</body>
+</html>

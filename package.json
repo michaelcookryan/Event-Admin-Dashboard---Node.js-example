@@ -1,0 +1,28 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "node section of final assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Michael Ryan A00874494",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.5",
+    "title-case": "^2.1.1"
+  },
+  "engines":{
+   " node": "7.10.0"
+  }
+}

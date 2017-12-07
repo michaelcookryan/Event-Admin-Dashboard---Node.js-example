@@ -1,0 +1,99 @@
+<h2 class="page-header">Edit Event</h2>
+<table id="editEvents">
+    <tr>
+        <th>ID</th>
+        <th>Activity</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+    </tr>
+
+    <tr>
+        <td class="id-cell">{{docs._id}}</td>
+        <td>{{docs.activity}}</td>
+        <td>{{docs.date}}</td>
+        <td>{{docs.start}}</td>
+        <td>{{docs.end}}</td>
+      
+        <td class="button-cells"><form method="post" action="/search/delete">
+        <input type="hidden", name="_method", value="delete"/>
+        <a href="/search/delete?id={{docs._id}}" onclick='return confirm("You are going to delete this event. Continue?")'class="button-cells-edit-only btn btn-default edit-del hover-red">Delete</a>
+        </form>
+        </td>
+    </tr>
+
+</table>
+{{#if errors}}
+{{#each errors}}
+    <div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+<form id="updateForm" method="post" action="/search/update">
+     <h4 class="edit-form-heading">Make your changes here, then click update to save:</h4>
+     <p class="sub-heading">*any fields left untouched or empty wil NOT be updated</p>
+    <div class="form-group">
+        <label>Event ID {{_id}}</label>
+        <input id="objID" class="form-control" placeholder="*Must have event ID to make edits or delete" name="objID" value="{{docs._id}}" readonly/>
+    </div>
+    <div class="form-group">
+        <label>Activity</label>
+        <input id="activity" class="form-control" placeholder="Activity" name="activity" value="{{docs.activity}}" />
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input id="date" class="form-control" placeholder="-- Select Date --" name="date" value="{{docs.date}}"/>
+    </div>
+    <div class="form-group">
+        <div class="time-selectors">
+        <label>Start Time</label>
+        <select id="start" class="form-control" name="start">
+            <option value="{{docs.start}}">{{docs.start}}</option>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11am</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+            <option value="11pm">11pm</option>
+            <option value="12am">12am</option>
+        </select>
+    </div>
+    {{!-- <div class="form-group"> --}}
+        <div class="time-selectors last">
+        <label>End Time</label>
+        <select id="end" class="form-control" name="end">
+            <option value="{{docs.end}}">{{docs.end}}</option>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11am</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+            <option value="11pm">11pm</option>
+            <option value="12am">12am</option>
+        </select>
+    </div></div>
+    <button type="submit" class="btn btn-default">Update</button>
+</form>

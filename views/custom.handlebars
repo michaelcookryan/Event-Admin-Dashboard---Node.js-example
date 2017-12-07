@@ -1,0 +1,105 @@
+<h2 class="page-header">Custom Seach Results</h2>
+{{#if docs}}
+<table id="allEvents">
+    <tr>
+        <th>Activity</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+    </tr>
+    {{#each docs}}
+    <tr>
+        <td>{{activity}}</td>
+        <td>{{date}}</td>
+        <td>{{start}}</td>
+        <td>{{end}}</td>
+      
+        <td class="button-cells">
+            <form method="post" action="/search/edit">
+            <button id="toBeUpdated" value="{{_id}}" name="toBeUpdated" type="submit" class="btn btn-default edit-del hover-blue">Edit</button>
+            </form></td>
+            
+        <td class="button-cells">
+            <form method="post" action="/search/delete">
+        <input type="hidden", name="_method", value="delete"/>
+        <a href="/search/delete?id={{_id}}" onclick='return confirm("You are going to delete this event. Continue?")'class="btn btn-default edit-del hover-red">Delete</a>
+        </form>
+        </td>
+    </tr>
+    {{/each}}
+{{else}}
+<h3 id="no-matches-found">No Matches Found</h3>
+{{/if}}
+</table>
+
+<form id="searchForm" method="post" action="/search/custom">
+<h3>Enter criteria for custom search here:</h3>
+    <div class="form-group">
+        <label>Activity</label>
+        <input id="activity" class="form-control" placeholder="Activity" name="activity" />
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input id="date" class="form-control" placeholder="-- Select Date --" name="date" />
+    </div>
+    <div class="form-group">
+        <div class="time-selectors">
+        <label>Start Time</label>
+        <select id="start" class="form-control" name="start">
+            <option disabled selected value>-- Select Option --</option>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11am</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+            <option value="11pm">11pm</option>
+            <option value="12am">12am</option>
+        </select>
+    </div>
+        <div class="time-selectors last">
+        <label>End Time</label>
+        <select id="end" class="form-control" name="end">
+            <option disabled selected value>-- Select Option --</option>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11am</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+            <option value="11pm">11pm</option>
+            <option value="12am">12am</option>
+        </select>
+    </div></div>
+
+    <button type="submit" class="btn btn-default">Search</button>
+    <button type="reset" class="btn btn-default" name="reset" onClick="clearForm()">Cancel</button>
+
+</form>
+<script>
+function clearForm() {
+    document.getElementById("searchForm").reset();
+}
+</script> 
