@@ -1,13 +1,13 @@
 {
   "name": "admin",
   "version": "1.0.0",
-  "description": "node section of final assignment",
+  "description": "node example of scalable data base in the form of an admin dashboard",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
-  "author": "Michael Ryan A00874494",
+  "author": "Michael Ryan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "*",
