@@ -19,7 +19,7 @@
     "express-session": "*",
     "express-validator": "*",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.13.5",
+    "mongoose": "^5.8.10",
     "title-case": "^2.1.1"
   },
   "engines":{
